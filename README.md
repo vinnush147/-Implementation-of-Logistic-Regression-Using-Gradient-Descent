@@ -18,11 +18,11 @@ To write a program to implement the the Logistic Regression Using Gradient Desce
 
 ## Program:
 
-/*
+```
 Program to implement the the Logistic Regression Using Gradient Descent.
 Developed by: Vinnush Kumar L S
 RegisterNumber: 212223230244
-*/
+```
 ```
 from google.colab import drive
 drive.mount('/content/gdrive')
@@ -32,18 +32,18 @@ import matplotlib.pyplot as plt
 ```
 
 ## Read the Dataset:
-
+```
 a=pd.read_csv('/content/Placement_Data_Full_Class (1).csv')
 a
-
+```
 ## Output:
 ![image](https://github.com/user-attachments/assets/cb81a177-2b4d-4139-b8b3-87896d323419)
 ## Info :
-
+```
 a.head()
 a.tail()
 a.info()
-
+```
 
 ## Output:
 
@@ -52,15 +52,15 @@ a.info()
 ![image](https://github.com/user-attachments/assets/9ad47c29-1ea9-4738-a858-c26db8ed6da9)
 
 ## Drop unnecessary columns
-
+```
 a=a.drop(['sl_no'],axis=1)
 a
-
+```
 ## Output:
 ![Screenshot 2024-10-16 094934](https://github.com/user-attachments/assets/689b4970-82a2-48cb-80ad-f0f8742c1869)
 
 ## Encoding Categorical Variables:
-
+```
 a['gender']=a['gender'].astype('category')
 a['ssc_b']=a['ssc_b'].astype('category')
 a['hsc_b']=a['hsc_b'].astype('category')
@@ -80,18 +80,18 @@ a['workex']=a['workex'].cat.codes
 a['specialisation']=a['specialisation'].cat.codes
 a['status']=a['status'].cat.codes
 a.info()
-
+```
 ## Output:
 ![Screenshot 2024-10-16 095131](https://github.com/user-attachments/assets/492de0b1-f138-4ece-993d-fdaf91dd1105)
 ![image](https://github.com/user-attachments/assets/c6a67e9c-c407-4c35-a9f6-196cccea0570)
 
 ## Splitting Data:
-
+```
 x=a.iloc[:,:-1].values
 y=a.iloc[:,-1].values
-
+```
 ## Gradient Descent:
-
+```
 theta=np.random.randn(X.shape[1])
 y=Y
 def sigmoid(z):
@@ -115,17 +115,17 @@ y_pred=predict(theta,X)
 accuracy=np.mean(y_pred.flatten()==y)
 print(accuracy*100)
 print(y_pred)
-
+```
 ## Output :
 ![Screenshot 2024-10-16 114214](https://github.com/user-attachments/assets/a0cb9c87-e2ec-4e8d-8e96-9dd49ee9eee6)
 
 ## Prediction and Evaluation:
-
+```
 xnew=np.array([[0,87,0,95,0,2,78,2,0,0,1,0]])
 y_predn=predict(theta,xnew)
 print(y_predn)
 print(theta)
-
+```
 ## Output:
 ![Screenshot 2024-10-16 114403](https://github.com/user-attachments/assets/ab805222-996e-473e-bccc-d277b6790d04)
 ![image](https://github.com/user-attachments/assets/969a5e07-9dc9-4f06-8fb9-2b93aa1766c9)
